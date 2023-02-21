@@ -3,12 +3,12 @@
   "version": "6.0.5",
   "description": "MPEG1 Video Player Based On JSMpeg",
   "type": "module",
-  "main": "dist/jsmpeg-player.cjs",
-  "module": "dist/jsmpeg-player.esm.js",
-  "browser": "dist/jsmpeg-player.umd.min.js",
+  "main": "dist/jsmpegplayer.cjs",
+  "module": "dist/jsmpegplayer.esm.js",
+  "browser": "dist/jsmpegplayer.umd.min.js",
   "exports": {
-    "require": "./dist/jsmpeg-player.cjs",
-    "import": "./dist/jsmpeg-player.esm.js"
+    "require": "./dist/jsmpegplayer.cjs",
+    "import": "./dist/jsmpegplayer.esm.js"
   },
   "scripts": {
     "start": "npm run dev",
