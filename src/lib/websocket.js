@@ -8,9 +8,7 @@ export default class WSSource {
     this.callbacks = { connect: [], data: [] };
     this.destination = null;
 
-    this.reconnectInterval = options.reconnectInterval !== undefined
-      ? options.reconnectInterval
-      : 5;
+    this.reconnectInterval = options.reconnectInterval !== undefined ? options.reconnectInterval : 300;
     this.shouldAttemptReconnect = !!this.reconnectInterval;
 
     this.completed = false;

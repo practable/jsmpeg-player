@@ -43,6 +43,10 @@ export default class BaseDecoder {
     }
 
     this.bytesWritten += this.bufferWrite(buffers);
+    const videoWrite = new CustomEvent('jsmpeg:write', {
+      detail: { bytes: this.bytesWritten },
+    });
+    document.dispatchEvent(videoWrite);
     this.canPlay = true;
   }
 
@@ -87,7 +91,10 @@ export default class BaseDecoder {
       // Did we find a new PTS, different from the last? If so, we don't have
       // to advance the decoded time manually and can instead sync it exactly
       // to the PTS.
-      if (newTimestampIndex !== -1 && newTimestampIndex !== this.timestampIndex) {
+      if (
+        newTimestampIndex !== -1
+        && newTimestampIndex !== this.timestampIndex
+      ) {
         this.timestampIndex = newTimestampIndex;
         this.decodedTime = this.timestamps[this.timestampIndex].time;
         return;
